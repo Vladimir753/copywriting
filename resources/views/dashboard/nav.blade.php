@@ -18,7 +18,7 @@
         </ul>
 
         <ul>
-            <li>{{ __('messages.upgrade-plan-text') }}</li>
+            <li class="upgrade-plan-btn">{{ __('messages.upgrade-plan-text') }}</li>
         </ul>
     </nav>
 </aside>
