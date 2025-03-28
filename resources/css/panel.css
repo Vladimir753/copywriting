@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+}
+
+/* Основен контейнер */
+.container-panel {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: auto;
+    background: linear-gradient(0deg, #47ff56, transparent);
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    min-width: min-content;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2a2a2a;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #e3f2fd;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.settings {
+    display: flex;
+    gap: 10px; /* Разстояние между select и profile-icon */
+    align-items: center;
+    margin-left: auto; /* Избутва settings вдясно */
+}
+
+.settings button {
+    background: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.settings select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.profile-icon {
+    background: #2a2a2a;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Quick Access */
+.quick-access {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Да се разшири спрямо наличното пространство */
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.card.big {
+    background: #17a2b8;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Folders */
+.folders {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.folders button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.folders button:hover {
+    background: #218838;
+}
+
+/* Projects */
+.projects {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.project-grid {
+    display: flex;
+    gap: 10px;
+}
+
+.project-card {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+}
+
+.chat-container {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    bottom: 0px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Стилове за заглавието */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Контейнер за текстовото поле и бутона */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Текстовото поле */
+.text-area {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    resize: none;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.text-area:focus {
+    border-color: #5a9bf4;
+    box-shadow: 0 0 5px rgba(90, 155, 244, 0.5);
+}
+
+/* Контейнер за бутона */
+.button-container {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Бутон за изпращане */
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.editor-panel {
+    height: 47%;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        min-width: -moz-min-content;
+        min-width: min-content;
+    }
+}

@@ -1,0 +1,27 @@
+.w-23p {
+    width: 23%;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.float-right {
+    float: right;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.history-select:hover {
+    border-bottom: 1px solid #4ae3c0;
+}
+
+.color-gray {
+    color: gray;
+}
