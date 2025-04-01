@@ -1,0 +1,20 @@
+.form-chat-panel {
+    width: 100%;
+}
+
+.generate-panel {
+    border: 2px solid #54d38f;
+    border-radius: 11px;
+    margin-top: 33px;
+    padding: 20px;
+    width: 100%;
+}
+
+.generate-text {
+    border: 2px solid #54d38f;
+    border-radius: 11px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+    display: inline-block;
+}

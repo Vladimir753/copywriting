@@ -1,115 +1,115 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*}*/
 
-body {
-    background: #f8f9fa;
-}
+/*body {*/
+/*    background: #f8f9fa;*/
+/*}*/
 
-/* Основен контейнер */
-.container-panel {
-    display: flex;
-}
+/*!* Основен контейнер *!*/
+/*.container-panel {*/
+/*    display: flex;*/
+/*}*/
 
-/* Sidebar */
-.sidebar {
-    width: auto;
-    background: linear-gradient(0deg, #47ff56, transparent);
-    padding: 20px;
-    height: 100vh;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    min-width: min-content;
-}
+/*!* Sidebar *!*/
+/*.sidebar {*/
+/*    width: auto;*/
+/*    background: linear-gradient(0deg, #47ff56, transparent);*/
+/*    padding: 20px;*/
+/*    !*height: 100vh;*!*/
+/*    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);*/
+/*    position: sticky;*/
+/*    z-index: 1;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    overflow-x: hidden;*/
+/*    min-width: min-content;*/
+/*}*/
 
-.logo {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
+/*.logo {*/
+/*    font-size: 24px;*/
+/*    font-weight: 600;*/
+/*    margin-bottom: 30px;*/
+/*}*/
 
-nav ul {
-    list-style: none;
-}
+/*nav ul {*/
+/*    list-style: none;*/
+/*}*/
 
-nav ul li {
-    margin-bottom: 20px;
-}
+/*nav ul li {*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
-nav ul li a {
-    text-decoration: none;
-    color: #2a2a2a;
-    font-weight: 500;
-    display: block;
-    padding: 10px;
-    transition: 0.3s;
-}
+/*nav ul li a {*/
+/*    text-decoration: none;*/
+/*    color: #2a2a2a;*/
+/*    font-weight: 500;*/
+/*    display: block;*/
+/*    padding: 10px;*/
+/*    transition: 0.3s;*/
+/*}*/
 
-nav ul li a:hover {
-    background: #e3f2fd;
-    border-radius: 5px;
-}
+/*nav ul li a:hover {*/
+/*    background: #e3f2fd;*/
+/*    border-radius: 5px;*/
+/*}*/
 
-/* Main Content */
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1024px;
-}
+/*!* Main Content *!*/
+/*.main-content {*/
+/*    flex-grow: 1;*/
+/*    padding: 20px;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    max-width: 1024px;*/
+/*}*/
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+/*!* Header *!*/
+/*header {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
-.settings {
-    display: flex;
-    gap: 10px; /* Разстояние между select и profile-icon */
-    align-items: center;
-    margin-left: auto; /* Избутва settings вдясно */
-}
+/*.settings {*/
+/*    display: flex;*/
+/*    gap: 10px; !* Разстояние между select и profile-icon *!*/
+/*    align-items: center;*/
+/*    margin-left: auto; !* Избутва settings вдясно *!*/
+/*}*/
 
-.settings button {
-    background: none;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-}
+/*.settings button {*/
+/*    background: none;*/
+/*    border: none;*/
+/*    font-weight: 500;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.settings select {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
+/*.settings select {*/
+/*    padding: 5px;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid #ddd;*/
+/*}*/
 
-.profile-icon {
-    background: #2a2a2a;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    text-align: center;
-    width: 35px;
-    height: 35px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/*.profile-icon {*/
+/*    background: #2a2a2a;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    border-radius: 50%;*/
+/*    text-align: center;*/
+/*    width: 35px;*/
+/*    height: 35px;*/
+/*    font-weight: 600;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
 
-/* Quick Access */
+/*!* Quick Access *!*/
 .quick-access {
     display: flex;
     gap: 20px;
@@ -243,29 +243,309 @@ h1 {
     transition: background-color 0.3s;
 }
 
-.submit-button:hover {
-    background-color: #45a049;
+/*.submit-button:hover {*/
+/*    background-color: #45a049;*/
+/*}*/
+
+/*.editor-panel {*/
+/*    height: 47%;*/
+/*}*/
+
+/*.mt-15 {*/
+/*    margin-top: 15px;*/
+/*}*/
+
+/*.nav-panel {*/
+/*    position: relative;*/
+/*    height: 70vh;*/
+/*}*/
+
+/*.upgrade-plan-btn {*/
+/*    background: black;*/
+/*    color: white;*/
+/*    padding: 6px 30px;*/
+/*    border-radius: 11px;*/
+/*    font-size: 0.9rem;*/
+/*}*/
+
+/*.upgrade-panel {*/
+/*    border-top: 1px solid gray;*/
+/*    padding: 20px 0 0 0;*/
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*    .sidebar {*/
+/*        min-width: -moz-min-content;*/
+/*        min-width: min-content;*/
+/*    }*/
+/*}*/
+
+body {
+    background: #f8f9fa;
 }
 
-.editor-panel {
-    height: 47%;
+/* Основни стилове за страницата */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.mt-15 {
-    margin-top: 15px;
+body {
+    font-family: Arial, sans-serif;
+    /*display: flex;*/
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #fff;
 }
 
-.upgrade-plan-btn {
-    background: black;
+/* Стилове за страничния панел */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    background-color: #2c3e50;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
     color: white;
-    padding: 6px 30px;
-    border-radius: 11px;
-    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px; /* Намаляваме разстоянието между името и опциите */
 }
 
-@media (min-width: 768px) {
+/* Стилове за бутона "Меню" */
+.menu-btn {
+    display: none; /* По подразбиране скрит */
+    background-color: #34495e;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px; /* Намаляваме разстоянието от бутона към опциите */
+}
+
+/* Списък с навигационни линкове */
+.nav-list {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 5px 0; /* Намаляваме разстоянието между опциите */
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #34495e;
+}
+
+/* Стилове за бутона "Купи се" */
+.buy-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Позиционираме бутона "Купи се" най-долу */
+}
+
+.buy-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Основно съдържание */
+.template-container {
+    padding: 20px;
+    background-color: #fff;
+    /*height: 100%;*/
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    margin-left: 200px; /* Отстъп от навигационния бар */
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    /*min-height: 100vh;*/
+    box-sizing: border-box;
+    margin: 20px auto 0 auto;
+    padding-top: 70px; /* Оставя място за фиксираното меню */
+}
+
+/* Респонсив стилове за по-малки екрани */
+@media screen and (max-width: 768px) {
     .sidebar {
-        min-width: -moz-min-content;
-        min-width: min-content;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-btn {
+        display: block; /* Показваме бутона за менюто на мобилни устройства */
+    }
+
+    .nav-list {
+        display: none; /* Скриваме менюто по подразбиране */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-list.active {
+        display: block; /* Показваме менюто когато е активирано */
+    }
+
+    .nav-list li {
+        margin: 10px 0; /* Намаляваме разстоянието между опциите */
+    }
+
+    .nav-list a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .buy-btn {
+        margin-top: 10px;
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .template-container {
+        margin-left: 0;
+        /*width: 90%;*/
+        padding-top: 90px; /* Оставяме повече място за мобилни */
+    }
+}
+
+.settings {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 15px; /* Разстояние между елементите */
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9); /* Лек прозрачен фон */
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Стилове за езиковото меню */
+.settings select {
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+.settings select:hover {
+    border-color: #888;
+}
+
+/* Стилове за профилната икона */
+.profile-icon {
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.profile-icon:hover {
+    background: #555;
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin: 8px 0; /* По-малко разстояние между опциите */
+    }
+
+    .nav-list a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .buy-btn {
+        padding: 10px;
+    }
+
+    .template-container {
+        margin-left: 0;
+        /*width: 100%;*/
+        padding: 5px;
+    }
+
+    .settings {
+        right: 10px;
+        top: 10px;
+        padding: 5px 10px;
+        gap: 10px;
+    }
+
+    .settings select {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .profile-icon {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+        font-size: 14px;
     }
 }

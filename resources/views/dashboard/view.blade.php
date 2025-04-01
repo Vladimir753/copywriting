@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="container-panel">
         <!-- Sidebar Menu -->
         @include('dashboard.nav')
@@ -8,6 +8,7 @@
         <main class="main-content">
             @include('dashboard.lang-menu')
 
+            <div class="template-container">
 
             <!-- Quick Access Section (aligned with sidebar) -->
             <section class="quick-access">
@@ -46,8 +47,9 @@
                     <div class="project-card">2023-05-02 Untitled (2)</div>
                 </div>
             </section>
+            </div>
         </main>
     </div>
 
 
-</x-guest-layout>
+</x-app-layout>

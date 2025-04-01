@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <link
         href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
         rel="stylesheet"
@@ -17,6 +17,7 @@
 
             <div class="template-container">
                 @foreach($histories as $name => $allHistory)
+                    <div class="w-100p min-h-0">
                     <button class="accordion history-panel">{{ $name }}</button>
                     <div class="panel">
                     @foreach($allHistory as $index => $history)
@@ -28,6 +29,7 @@
                             </div>
                         </a>
                     @endforeach
+                    </div>
                     </div>
                 @endforeach
             </div>
@@ -41,4 +43,4 @@
     <!-- Initialize Quill editor -->
 
 
-</x-guest-layout>
+</x-app-layout>

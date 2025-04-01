@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
     let intervalId;
 
     const toolbarOptions = [
@@ -6,30 +6,30 @@ document.addEventListener("DOMContentLoaded", function(){
         ['blockquote', 'code-block'],
         ['link', 'image', 'video', 'formula'],
 
-        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-        [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-        [{ 'direction': 'rtl' }],                         // text direction
+        [{'header': 1}, {'header': 2}],               // custom button values
+        [{'list': 'ordered'}, {'list': 'bullet'}, {'list': 'check'}],
+        [{'script': 'sub'}, {'script': 'super'}],      // superscript/subscript
+        [{'indent': '-1'}, {'indent': '+1'}],          // outdent/indent
+        [{'direction': 'rtl'}],                         // text direction
 
-        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{'size': ['small', false, 'large', 'huge']}],  // custom dropdown
+        [{'header': [1, 2, 3, 4, 5, 6, false]}],
 
-        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-        [{ 'font': [] }],
-        [{ 'align': [] }],
+        [{'color': []}, {'background': []}],          // dropdown with defaults from theme
+        [{'font': []}],
+        [{'align': []}],
 
         ['clean']                                         // remove formatting button
     ];
 
 
-    const quill = new Quill("#editor", {
-        modules: {
-            toolbar: toolbarOptions,
-
-        },
-        theme: "snow",
-    });
+    // const quill = new Quill("#editor", {
+    //     modules: {
+    //         toolbar: toolbarOptions,
+    //
+    //     },
+    //     theme: "snow",
+    // });
 
     function fetchData() {
         fetch('/get-message', {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(){
             })
             .then(data => {
                 console.log(data);
-                if(data.message === null) {
+                if (data.message === null) {
                     return;
                 }
 
@@ -71,54 +71,65 @@ document.addEventListener("DOMContentLoaded", function(){
 // Стартираме интервала, който прави заявка на всяка секунда
 
 
+    if (document.getElementById('chat-send-button') !== null) {
+        document.getElementById('chat-send-button').addEventListener('click', function () {
+            intervalId = setInterval(fetchData, 500);
 
+            const form = document.querySelector("#chat-form");
+            const inputs = form.querySelectorAll("input, select, textarea");
 
-
-    document.getElementById('chat-send-button').addEventListener('click', function() {
-        intervalId = setInterval(fetchData, 500);
-
-        const form = document.querySelector("#chat-form");
-        const inputs = form.querySelectorAll("input, select, textarea");
-
-        const formValues = {};
-        inputs.forEach(input => {
-            formValues[input.name] = input.value;
-        });
-
-
-        fetch('/chat', {
-            method: 'POST',
-            body: JSON.stringify(formValues),
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => {
-                console.log(response);
-                // if (!response.ok) {
-                //     throw new Error('Грешка при зареждането на данни');
-                // }
-                // return response.json().message; // Преобразуваме отговорът в JSON
+            const formValues = {};
+            inputs.forEach(input => {
+                formValues[input.name] = input.value;
             });
 
-        // document.getElementById('question').value = null;
-    });
 
-    document.getElementById('btn-view-gen-text').addEventListener('click', function() {
-        document.getElementById('fields').classList.add("hidden");
-        document.getElementById('editor-panel').classList.remove("hidden");
-        document.getElementById('editor-panel').classList.add("inline-block", "height-43vh");
+            fetch('/chat', {
+                method: 'POST',
+                body: JSON.stringify(formValues),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    console.log(response);
+                    // if (!response.ok) {
+                    //     throw new Error('Грешка при зареждането на данни');
+                    // }
+                    // return response.json().message; // Преобразуваме отговорът в JSON
+                });
 
-        const divElement = document.getElementById("generated-text");
+            // document.getElementById('question').value = null;
+        });
+    }
+    if (document.getElementById('btn-view-gen-text') !== null) {
+        document.getElementById('btn-view-gen-text').addEventListener('click', function () {
+            document.getElementById('fields').classList.add("hidden");
+            document.getElementById('editor-panel').classList.remove("hidden");
+            document.getElementById('editor-panel').classList.add("inline-block", "height-43vh");
 
-        quill.clipboard.dangerouslyPasteHTML(divElement.innerHTML);
-    });
+            const divElement = document.getElementById("generated-text");
 
-    document.getElementById('btn-hide-gen-text').addEventListener('click', function() {
+            quill.clipboard.dangerouslyPasteHTML(divElement.innerHTML);
+        });
+    }
+if(document.getElementById('btn-hide-gen-text') !== null) {
+    document.getElementById('btn-hide-gen-text').addEventListener('click', function () {
         document.getElementById('fields').classList.remove("hidden");
         document.getElementById('editor-panel').classList.add("hidden");
         document.getElementById('editor-panel').classList.remove("inline-block", "height-43vh");
+    });
+}
+
+    // Получаваме бутоните и списъка с навигационни линкове
+    const menuBtn = document.getElementById('menu-btn');
+    const navList = document.getElementById('nav-list');
+
+// Добавяме обработчик на събитие за бутона "Меню"
+    menuBtn.addEventListener('click', () => {
+        // Добавяме или премахваме клас "active" за навигационния списък
+        navList.classList.toggle('active');
     });
 
 // // Get the modal

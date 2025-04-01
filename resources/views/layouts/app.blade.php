@@ -14,7 +14,18 @@
 
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js',
+'resources/css/bootstrap.css',
+'resources/css/fonts.css',
+'resources/css/style.css',
+'resources/css/variables.css',
+'resources/css/panel.css'])
+
+
+
+
+    <script src="{{ asset('build/public/js/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('build/public/js/pointer-events.min.js') }}"></script>
 
 
     <!-- Styles -->
@@ -44,6 +55,7 @@
     </main>
 </div>
 
+@include('payment-boxes.modal')
 
 @stack('modals')
 

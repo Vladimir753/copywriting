@@ -34,9 +34,12 @@ export default defineConfig({
             'resources/css/modal.css',
             'resources/css/variables.css',
             'resources/css/history.css',
+            'resources/css/chat.css',
+            'resources/css/payment-boxes.css',
             'resources/js/app.js',
             'resources/js/main.js',
             'resources/js/modal.js',
+            'resources/js/payment-boxes.js',
         ])
     ],
     server: {

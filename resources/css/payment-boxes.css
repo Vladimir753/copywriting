@@ -1,0 +1,127 @@
+/* Стилове за модала */
+.modal {
+    display: none; /* Скрит по подразбиране */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Затъмняване на фона */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    width: 750px; /* Фиксирана ширина */
+    max-width: 90%; /* За по-малки екрани */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Бутон за затваряне */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Бутони за превключване */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.toggle-buttons .active {
+    background: black;
+    color: white;
+}
+
+/* Стилове за плановете */
+.plans {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.plan {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.highlighted {
+    border: 2px solid #00aaff;
+}
+
+/* Цени */
+.price {
+    font-size: 20px;
+    color: #a100ff;
+}
+
+.annual-price {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Скриване на годишните цени */
+.hidden {
+    display: none;
+}
+
+/* Бутон за ъпгрейд */
+.upgrade-btn {
+    width: 100%;
+    background: #6200ea;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.upgrade-btn:hover {
+    background: #3700b3;
+}
+
+.plans-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.plan {
+    flex: 1;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plan.selected {
+    border: 2px solid #6200ea;
+    box-shadow: 0px 4px 10px rgba(98, 0, 234, 0.3);
+}

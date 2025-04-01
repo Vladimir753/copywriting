@@ -1,9 +1,9 @@
-<x-guest-layout>
+<x-app-layout>
     <link
         href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
         rel="stylesheet"
     />
-    @vite(['resources/js/main.js'])
+    @vite(['resources/js/main.js', 'resources/css/chat.css'])
 
 
     <div class="container-panel">
@@ -25,6 +25,8 @@
 
             <!-- Create the editor container -->
 
+<div class="template-container">
+
 
             <div id="editor-panel" class="hidden">
                 <div id="editor"></div>
@@ -32,7 +34,7 @@
             </div>
 
 
-            <form action="{{ route('chat') }}" method="post" id="chat-form">
+            <form action="{{ route('chat') }}" method="post" id="chat-form" class="form-chat-panel">
                 @include('chat.templates.' . request()->template)
                 <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}" />
                 <input type="hidden" name="template" value="{{ request()->template }}" />
@@ -51,7 +53,7 @@
 
 
 
-
+</div>
         </main>
     </div>
 
@@ -62,4 +64,4 @@
     <!-- Initialize Quill editor -->
 
 
-</x-guest-layout>
+</x-app-layout>

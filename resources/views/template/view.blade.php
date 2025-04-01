@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <link
         href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
         rel="stylesheet"
@@ -37,4 +37,4 @@
     <!-- Initialize Quill editor -->
 
 
-</x-guest-layout>
+</x-app-layout>
