@@ -5,20 +5,9 @@ namespace App\Http\Controllers;
 
 
 use App\Jobs\GenerateTextJob;
-use App\Models\History;
-use App\Services\ChatServer;
-use Gemini\Data\Content;
-use Gemini\Enums\Role;
-use Gemini\Laravel\Facades\Gemini;
-use GeminiAPI\Client;
-use GeminiAPI\Resources\ModelName;
-use GeminiAPI\Resources\Parts\TextPart;
+use App\Models\HardTemplate;
+use App\Models\Template;
 use Illuminate\Http\Request;
-use Orhanerday\OpenAi\OpenAi;
-use Gemini\Data\GenerationConfig;
-use Gemini\Enums\HarmBlockThreshold;
-use Gemini\Data\SafetySetting;
-use Gemini\Enums\HarmCategory;
 
 
 class TemplateController extends Controller
@@ -32,9 +21,23 @@ class TemplateController extends Controller
 
     public function index()
     {
+        $hardcodedTemplates = app(HardTemplate::class)->byPermission()->toArray();
+
+        $templates = Template::byPermission()->get();
+
+        $a = [];
+        foreach ($templates as $template) {
+            $a[$template->slug] = $template->toArray();
+        }
+
         return view('template.view', [
-            'templates' => $this->config,
+            'templates' => array_merge($hardcodedTemplates, $a),
         ]);
+    }
+
+    public function create()
+    {
+        return view('template.create');
     }
 
 

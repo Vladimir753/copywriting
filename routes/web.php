@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateTemplateController;
 use App\Http\Controllers\IsReadController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
@@ -42,7 +43,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         return 'Плащането е отменено.';
     })->name('checkout.cancel');
 
-    Route::post('/create-subscription-session', [SubscriptionController::class, 'createSubscriptionSession'])->name('subscription.session');
+    Route::post('/create-subscription-session', [SubscriptionController::class, 'store'])->name('subscription.session');
     Route::get('/subscription-success', function () {
         return 'Абонаментът е успешен!';
     })->name('subscription.success');
@@ -50,7 +51,3 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         return 'Абонаментът е отказан.';
     })->name('subscription.cancel');
 });
-Route::post('/stripe/webhook', [SubscriptionController::class, 'handleWebhook']);
-
-
-

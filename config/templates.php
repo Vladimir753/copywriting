@@ -1,5 +1,8 @@
 <?php
 
+use App\Constants;
+use App\TemplatesGroup;
+
 return [
     'default' => [
         'id' => 1,
@@ -7,7 +10,8 @@ return [
         'name' => 'Default',
         'icon' => '/icons/default.svg',
         'prompt' => 'Write a compelling piece of content that is engaging, well-structured, and optimized for the target audience. Maintain a clear and natural flow, use persuasive language where needed, and ensure readability. Keep the tone appropriate for the context, and include a strong call to action if necessary.',
-        'variables' => [],
+        'permission' => Constants::BASIC,
+        'group' => TemplatesGroup::BRANDING,
     ],
     'ad-copy' => [
         'id' => 2,
@@ -19,7 +23,9 @@ return [
         'adTopic' => 'adTopic',
         'adPlatform' => 'adPlatform',
         'targetAudience' => 'targetAudience',
-        'keyBenefits' => 'keyBenefits'
+        'keyBenefits' => 'keyBenefits',
+        'permission' => Constants::BASIC,
+        'group' => TemplatesGroup::MARKETING,
     ],
     'marketing-content' => [
         'id' => 3,
@@ -32,6 +38,8 @@ return [
         'contentTopic' => 'contentTopic',
         'toneStyle' => 'toneStyle',
         'keyFocus' => 'keyFocus',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::MARKETING,
     ],
     'email-marketing' => [
         'id' => 4,
@@ -43,6 +51,8 @@ return [
         'emailPurpose' => 'emailPurpose',
         'targetAudience' => 'targetAudience',
         'emailTone' => 'emailTone',
+        'permission' => Constants::BASIC,
+        'group' => TemplatesGroup::EMAIL,
     ],
     'social-media-content' => [
         'id' => 5,
@@ -56,8 +66,8 @@ return [
         'postGoal' => 'postGoal',
         'postTone' => 'postTone',
         'characterLimit' => 'characterLimit',
-
-
+        'permission' => Constants::BASIC,
+        'group' => TemplatesGroup::SOCIAL,
     ],
     'seo-content' => [
         'id' => 6,
@@ -70,6 +80,8 @@ return [
         'seoTopic' => 'seoTopic',
         'keywordsList' => 'keywordsList',
         'contentLength' => 'contentLength',
+        'permission' => Constants::BASIC,
+        'group' => TemplatesGroup::MARKETING,
     ],
     'storytelling-branding' => [
         'id' => 7,
@@ -82,6 +94,8 @@ return [
         'companyName' => 'companyName',
         'brandTone' => 'brandTone',
         'targetAudience' => 'targetAudience',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::BRANDING,
     ],
     'ai-text-analysis-enhancement' => [
         'id' => 8,
@@ -91,6 +105,8 @@ return [
         'prompt' => 'Analyze this text and suggest an improved version with better tone, clarity, and SEO optimization: {originalText}. Return only the improved version without any explanations or additional text.',
         'variable' => 'variable',
         'originalText' => 'originalText',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::AI,
     ],
     'personalized-messages-communication' => [
         'id' => 9,
@@ -102,6 +118,8 @@ return [
         'recipientProfession' => 'recipientProfession',
         'messageTone' => 'messageTone',
         'connectionPurpose' => 'connectionPurpose',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::EMAIL,
     ],
     'hyper-personalized-sales-copy' => [
         'id' => 10,
@@ -113,6 +131,8 @@ return [
         'productOrService' => 'productOrService',
         'targetAudience' => 'targetAudience',
         'toneStyle' => 'toneStyle',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::MARKETING,
     ],
 
     'youtube-video-content' => [
@@ -125,6 +145,8 @@ return [
         'videoTopic' => 'videoTopic',
         'videoLength' => 'videoLength',
         'toneStyle' => 'toneStyle',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::SOCIAL,
     ],
     'ai-chatbot-customer-support-messages' => [
         'id' => 12,
@@ -135,6 +157,8 @@ return [
         'variable' => 'variable',
         'customerQuery' => 'customerQuery',
         'responseTone' => 'responseTone',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::AI
     ],
     'e-commerce-dropshipping' => [
         'id' => 13,
@@ -147,6 +171,8 @@ return [
         'descriptionFormat' => 'descriptionFormat',
         'keyFeatures' => 'keyFeatures',
         'writingStyle' => 'writingStyle',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::ECOM
     ],
     'newsletter-community-content' => [
         'id' => 14,
@@ -159,6 +185,8 @@ return [
         'audienceGroup' => 'audienceGroup',
         'newsletterGoal' => 'newsletterGoal',
         'toneOfVoice' => 'toneOfVoice',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::EMAIL,
     ],
     'ai-pr-outreach' => [
         'id' => 15,
@@ -170,6 +198,8 @@ return [
         'announcementTopic' => 'announcementTopic',
         'keyInformation' => 'keyInformation',
         'toneStyle' => 'toneStyle',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::MARKETING,
     ],
     'hr-recruitment' => [
         'id' => 16,
@@ -180,6 +210,8 @@ return [
         'variable' => 'variable',
         'jobTitle' => 'jobTitle',
         'keyHighlights' => 'keyHighlights',
+        'permission' => Constants::PREMIUM,
+        'group' => TemplatesGroup::HR,
     ],
     'tiktok-viral-content-hooks' => [
         'id' => 17,
@@ -190,5 +222,7 @@ return [
         'variable' => 'variable',
         'videoTheme' => 'videoTheme',
         'videoObjective' => 'videoObjective',
+        'permission' => Constants::PRO,
+        'group' => TemplatesGroup::SOCIAL,
     ],
 ];

@@ -36,6 +36,7 @@ export default defineConfig({
             'resources/css/history.css',
             'resources/css/chat.css',
             'resources/css/payment-boxes.css',
+            'resources/css/template.css',
             'resources/js/app.js',
             'resources/js/main.js',
             'resources/js/modal.js',
@@ -46,9 +47,16 @@ export default defineConfig({
         host: 'localhost',
         port: 5173,
         cors: {
-            origin: 'https://copy.com',
+            origin: [
+                'https://copy.com',
+              'https://577f-213-130-79-91.ngrok-free.app',
+            ],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
             allowedHeaders: ['Content-Type', 'Authorization'],
-        }
+        },
+        hmr: {
+            host: process.env.VITE_HMR_HOST || 'localhost',
+        },
+
     }
 });

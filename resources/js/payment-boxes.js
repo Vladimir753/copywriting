@@ -22,3 +22,21 @@ document.getElementById("annualBtn").addEventListener("click", function() {
     document.getElementById("annualBtn").classList.add("active");
     document.getElementById("monthlyBtn").classList.remove("active");
 });
+
+// Избор на план
+const plans = document.querySelectorAll(".plan");
+const upgradeButton = document.querySelector(".upgrade-btn");
+
+plans.forEach(plan => {
+    plan.addEventListener("click", function() {
+        // Премахване на активния клас от всички планове
+        plans.forEach(p => p.classList.remove("selected"));
+
+        // Добавяне на активен клас към избрания план
+        plan.classList.add("selected");
+
+        // Промяна на текста на бутона
+        const planName = plan.querySelector("h3").innerText;
+        upgradeButton.innerText = `Upgrade to ${planName}`;
+    });
+});

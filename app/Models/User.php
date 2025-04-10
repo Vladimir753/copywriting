@@ -52,6 +52,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function details()
+    {
+        return $this->hasOne(UserDetails::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *

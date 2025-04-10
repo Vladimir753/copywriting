@@ -14,27 +14,18 @@
 
         <!-- Планове -->
         <div class="plans">
-            <div class="plan">
-                <h3>Free</h3>
-                <p>1 Seat</p>
-                <p>2000 Words In Chat</p>
-                <p>200 Workflow Credits</p>
-                <h4>Free Forever</h4>
-            </div>
-            <div class="plan highlighted">
-                <h3>Starter</h3>
-                <p>1 Seat</p>
-                <p>Unlimited Words In Chat</p>
-                <h4 class="price">$36 /mo</h4>
-                <p class="annual-price hidden">$27 /mo (billed $324 /yr)</p>
-            </div>
-            <div class="plan">
-                <h3>Pro</h3>
-                <p>5 Seats</p>
-                <p>Unlimited Words + AI Features</p>
-                <h4 class="price">$99 /mo</h4>
-                <p class="annual-price hidden">$75 /mo (billed $900 /yr)</p>
-            </div>
+            @foreach($paymentsBoxes['boxes'] as $paymentBox)
+                <div class="plan highlighted">
+                    <input type="hidden" class="js-plan-id" value="{{ $paymentBox['plan_id'] }}">
+                    <h3>{{ $paymentBox['name'] }}</h3>
+                    @foreach($paymentBox['features'] as $feature)
+                        <p>{{ $feature }}</p>
+                    @endforeach
+
+                    <h4 class="price">{{ $paymentBox['price'] }} / {{ $paymentBox['frequency'] }}</h4>
+{{--                    <p class="annual-price hidden">$27 /mo (billed $324 /yr)</p>--}}
+                </div>
+            @endforeach
         </div>
 
 {{--        <button id="checkout-button" class="upgrade-btn">Upgrade Plan</button>--}}
@@ -80,6 +71,10 @@
                 'X-CSRF-TOKEN': '{{ csrf_token() }}',
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify({
+                plan_id: document.querySelector('.plan.selected .js-plan-id')?.value,
+                permission: document.querySelectorAll('.plan.selected H3')[0].innerHTML,
+            })
         })
         .then(response => response.json())
         .then(session => {

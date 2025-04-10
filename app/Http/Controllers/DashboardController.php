@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\History;
+use App\Models\UserDetails;
 use App\Services\ChatServer;
 use Gemini\Data\Content;
 use Gemini\Enums\Role;
@@ -72,11 +73,6 @@ class DashboardController extends Controller
 //            'topP' => 0.5, //(Яснота срещу креативност)
 //            'topK' => 20, //(Ограничение на избора на думи)
 //        ];
-
-
-
-
-
 
         return view('dashboard.view');
     }

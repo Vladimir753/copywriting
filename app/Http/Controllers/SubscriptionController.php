@@ -2,49 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Requests\StripeSubscriptionStoreRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
+use Stripe\Webhook;
 
 class SubscriptionController
 {
-    public function createSubscriptionSession(Request $request)
+    public function store(StripeSubscriptionStoreRequest $request)
     {
+        $validated = $request->validated();
+
         Stripe::setApiKey(config('services.stripe.secret'));
+
+        $planId = config("payments-boxes.config.{$validated['plan_id']}");
 
         $session = Session::create([
             'payment_method_types' => ['card'],
             'mode' => 'subscription',
             'line_items' => [[
-                'price' => 'price_1R8otyFK2Ux1Mh2vchzMEqSf',
+                'price' => $planId,
                 'quantity' => 1,
             ]],
-            'success_url' => route('subscription.success'),
-            'cancel_url' => route('subscription.cancel'),
+            'metadata' => [
+                'permission' => $validated['permission'],
+                'user_id' => auth()->user()->id,
+                'purchasable_id' => 1,
+                'purchasable_type' => $validated['permission'],
+            ],
+            'success_url' => url()->previous(),
+            'cancel_url' => route(Route::current()->getName()),
         ]);
 
         return response()->json(['id' => $session->id]);
-    }
-
-    public function handleWebhook(Request $request)
-    {
-        Stripe::setApiKey(config('services.stripe.secret'));
-
-        $endpoint_secret = config('services.stripe.webhook_secret');
-        $payload = $request->getContent();
-        $sig_header = $request->header('Stripe-Signature');
-
-        try {
-            $event = Webhook::constructEvent($payload, $sig_header, $endpoint_secret);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 400);
-        }
-
-        if ($event->type === 'invoice.payment_succeeded') {
-            $subscription = $event->data->object;
-            // Обновяване на базата с данни за активен абонамент
-        }
-
-        return response()->json(['status' => 'success']);
     }
 }
